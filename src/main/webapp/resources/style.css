@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+html {
+  height: 100%;
+}
+
+body {
+    background: url("/resources/pattern.jpg");
+    height: 97%;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0% 10%;
+}
+
+.w-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Play', sans-serif;
+    font-style: Regular;
+    font-size: 80px;
+}
+
+.a-text{
+    margin: 0px;
+    font-family: 'Play', sans-serif;
+    font-style: Regular;
+    font-size: 80px;
+}
+
+.b-text{
+    font-family: 'Play', sans-serif;
+    font-style: Regular;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.icon{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 150px
+    }
+
+.e-text{
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Play', sans-serif;
+        font-style: Regular;
+        font-size: 70px;
+    }
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{
+    0% { opacity: 1.0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1.0; }
+}
+
+.panel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    display:inline-block;
+    overflow: auto;
+}
+
+.p-field{
+    margin: 5% 10%;
+}
+
+.input{
+    display:inline-block;
+    overflow: auto;
+    width: 100%;
+}
+
+body .ui-dataview .ui-dataview-content {
+    position:absolute;
+    top:12%;
+    left: 17%;
+    border: 0 none;
+    background: transparent;
+    color: #495057;
+    padding: 0;
+}
+
+body .ui-dataview .ui-dataview-header {
+    display: none;
+}
+
+.ui-md-4{
+    width:40%;
+    margin: 0px 20px;
+}
+
+body .ui-card {
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.card2 {
+     width: 60%;
+     background: #ffffff;
+     border-radius: 10px;
+     padding: 20px 20px;
+     border: 5px solid #dee2e6;
+ }
+
+.a-button{
+    position:fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+.b-button{
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-height: 60px;
+    z-index: 9999;
+    background-color: #2196F3;
+    margin-left:0%;
+}
+
+body .ui-tabmenu .ui-tabmenu-nav {
+    margin: 10px 0px;
+    padding: 0px 25px;
+    background: #ffffff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    height: 70px;
+    border-radius: 50px;
+}
+
+.ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
+        text-align: center;
+}
+
+.customPanelGrid .ui-panelgrid-content {
+    align-items: center;
+}
+
+body .ui-datascroller .ui-datascroller-content {
+  border: 0px;
+  background: transparent;
+  color: #495057;
+  padding: 1rem; }
+
+.pie-title{
+    font-family: 'Play', sans-serif;
+    font-style: Regular;
+    font-size: 20px;
+    text-align:center
+}

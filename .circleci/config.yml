@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  maven: circleci/maven@1.1
+
+workflows:
+  maven_test:
+    jobs:
+      - maven/test
+
+machine:
+  java:
+    version: oraclejdk8
+
+deployment:
+  staging:
+    branch: master
+    heroku: 
+      appname: Web-Hash-Anonimization-system

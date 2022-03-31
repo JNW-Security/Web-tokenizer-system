@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.CategoryMapper">
+
+    <resultMap type='Category' id='CategoryResult'>
+        <id property='id' column='id' />
+        <result property='creationDate' column='creationDate' />
+        <result property='name' column='name' />
+        <result property='tokenName' column='tokenName' />
+        <result property='description' column='description' />
+    </resultMap>
+
+    <resultMap id="ReportResult" type="ReportCategory">
+        <result property='fecha' column='fecha' />
+        <result property='nombre' column='nombre' />
+        <result property='token' column='token' />
+        <result property='descripcion' column='descripcion' />
+    </resultMap>
+
+    <!--loadCategorys-->
+    <select parameterType="map" id="loadAllC" resultMap="CategoryResult">
+        SELECT * FROM caso
+    </select>
+
+    <!--loadCategorys-->
+    <select parameterType="map" id="loadReportCategory" resultMap="ReportResult">
+        SELECT
+            c.creationDate as fecha,
+            c.name as nombre,
+            c.tokenName as token,
+            c.description as descripcion
+        FROM category c
+    </select>
+
+    <!--loadCategory-->
+    <select parameterType="map" id="loadC" resultMap="CategoryResult">
+        SELECT
+            c.id ,
+            c.creationDate,
+            c.name ,
+            c.tokenName,
+            c.description
+        FROM category c
+        WHERE c.id = #{id}
+    </select>
+    
+    <!--addCategory-->
+    <insert parameterType="map" id="addCategory">
+        INSERT INTO category (creationdate,name,tokenName,description)
+        VALUES (CURRENT_TIMESTAMP,#{category.name},#{category.tokenName},#{category.description})
+    </insert>
+
+    <!--updateCategory-->
+    <update parameterType="map" id="modifyCategory">
+        UPDATE category
+        SET
+        name = #{category.name},
+        description = #{category.description},
+        WHERE id = #{category.id}
+    </update>
+
+</mapper>

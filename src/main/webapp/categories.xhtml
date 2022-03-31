@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+    <title>Categories</title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+</h:head>
+<h:body>
+    <ui:include src="menuA.xhtml"></ui:include>
+    <h:form id="form">
+        <p:button outcome="categories2" value="Volver" icon="pi pi-arrow-left" iconPos="left" />
+        <p:commandButton value="XLS" icon="pi pi-download" style="margin-left:10px;">
+            <p:dataExporter type="xls" target="dt-categories" fileName="categories"/>
+        </p:commandButton>
+        <p:commandButton value="PDF" icon="pi pi-download" style="margin-left:10px; text-align:right;">
+            <p:dataExporter type="pdf" target="dt-categories" fileName="categoriesPDF"/>
+        </p:commandButton>
+        <div class="card category">
+            <p:growl id="messages" showDetail="true"/>
+            <p:dataTable id="dt-categories" widgetVar="dtCategory" var="report" value="#{categoryBean.report}"
+                         reflow="true" styleClass="categories-table">
+
+                <p:column headerText="Fecha">
+                    <h:outputText value="#{report.fecha}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{report.nombre}"/>
+                </p:column>
+                <p:column headerText="Token">
+                    <h:outputText value="#{report.token}"/>
+                </p:column>
+                <p:column headerText="Descripcion">
+                    <h:outputText value="#{report.descripcion}"/>
+                </p:column>
+            </p:dataTable>
+        </div>
+    </h:form>
+</h:body>
+</html>

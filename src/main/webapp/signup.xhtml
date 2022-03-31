@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="/resources/style.css"/>
+</h:head>
+<h:body>
+    <div class="card">
+        <p:button outcome="index.html" value="Volver" icon="pi pi-arrow-left" iconPos="left" />
+        <h:form id="signup_form">
+            <p:growl id="growl" showDetail="true" />
+            <p:panel header="SIGN UP" footer="SPTI" class="panel">
+                <div class="p-field">
+                    <h:form id="version">
+                        <p:selectOneButton id="option" value="#{userBean.selectedVersion}" update="version">
+                            <f:selectItem itemLabel="Version 1" itemValue="Version 1" />
+                            <f:selectItem itemLabel="Version 2" itemValue="Version 2"/>
+                            <f:selectItem itemLabel="Version 3" itemValue="Version 3"/>
+                        </p:selectOneButton>
+                    </h:form>
+                </div>
+                <div class="p-field">
+                    <p:outputLabel for="user" styleClass="p-col-fixed" value="Username"/>
+                    <div class="p-col">
+                        <p:inputText  class="input" id="user" value="#{userBean.user.username}"/>
+                    </div>
+                </div>
+                <div class="p-field">
+                    <p:outputLabel for="fullname" styleClass="p-col-fixed" value="Fullname"/>
+                    <div class="p-col">
+                        <p:inputText  class="input" id="fullname" value="#{userBean.user.fullname}"/>
+                    </div>
+                </div>
+                <div class="p-field">
+                    <p:outputLabel for="mail" styleClass="p-col-fixed" value="Mail"/>
+                    <div class="p-col">
+                        <p:inputText  class="input" id="mail" value="#{userBean.user.mail}"/>
+                    </div>
+                </div>
+                <div class="p-field">
+                    <p:outputLabel for="pwd" styleClass="p-col-fixed" value="Password"/>
+                    <div class="p-col">
+                        <p:password class="input" id="pwd" value="#{userBean.user.userpassword}" toggleMask="true" redisplay="true"/>
+                    </div>
+                </div>
+                <div class="p-field">
+                    <p:commandButton class="button" action="#{userBean.signup}" value="Registrarse" update="growl"/>
+                </div>
+            </p:panel>
+        </h:form>
+    </div>
+</h:body>
+</html>
