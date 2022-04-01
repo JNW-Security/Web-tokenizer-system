@@ -11,6 +11,9 @@ link: localhost:8080/index.html
 - Juan Monroy 
 - Nicolas Piñeros
 
+## Video 
+[![Alt text](https://img.youtube.com/vi/HkRJIcfL3yA/0.jpg)](https://www.youtube.com/watch?v=HkRJIcfL3yA)
+
 ## Descrición
 Es una plataforma de registro y tratamiento de datos sobre las vacunas para el COVID-19, de forma que presentaremos 3 casos de uso, donde en cada uno de ellos se mostraran las vulnerabilidades del sistema y las capas de protección que se van añadiendo para garantizar que el sistema se anonimice y por tanto brinde mayor robustez. 
 
