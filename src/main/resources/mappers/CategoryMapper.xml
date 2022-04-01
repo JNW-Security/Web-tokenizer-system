@@ -9,7 +9,10 @@
         <id property='id' column='id' />
         <result property='creationDate' column='creationDate' />
         <result property='name' column='name' />
-        <result property='tokenName' column='tokenName' />
+        <result property='age' column='age' />
+        <result property='credential' column='credential' />
+        <result property='rh' column='rh' />
+        <result property='vaccine' column='vaccine' />
         <result property='description' column='description' />
     </resultMap>
 

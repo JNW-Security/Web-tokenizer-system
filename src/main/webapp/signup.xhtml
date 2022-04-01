@@ -12,10 +12,10 @@
 </h:head>
 <h:body>
     <div class="card">
-        <p:button outcome="index.html" value="Volver" icon="pi pi-arrow-left" iconPos="left" />
+        <p:button outcome="index.html" value="Home" icon="pi pi-arrow-left" iconPos="left" />
         <h:form id="signup_form">
             <p:growl id="growl" showDetail="true" />
-            <p:panel header="SIGN UP" footer="SPTI" class="panel">
+            <p:panel id="manage-category-content" header="SIGN UP" footer="SPTI" class="panel">
                 <div class="p-field">
                     <h:form id="version">
                         <p:selectOneButton id="option" value="#{userBean.selectedVersion}" update="version">

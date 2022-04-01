@@ -30,8 +30,11 @@ public class CategoryBean extends BasePageBean {
     private Integer categoryId;
     private Category category;
     private String name;
-    private String tokenName;
     private String description;
+    private int age;
+    private String credential;
+    private String rh;
+    private String vaccine;
     private int id;
     private Date creationDate;
     private boolean button;
@@ -149,12 +152,36 @@ public class CategoryBean extends BasePageBean {
         this.name = name;
     }
 
-    public String getTokenName() {
-        return tokenName;
+    public int getAge() {
+        return age;
     }
 
-    public void setTokenName(String tokenName) {
-        this.tokenName = tokenName;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getCredential() {
+        return credential;
+    }
+
+    public void setCredential(String credential) {
+        this.credential = credential;
+    }
+
+    public String getRh() {
+        return rh;
+    }
+
+    public void setRh(String rh) {
+        this.rh = rh;
+    }
+
+    public String getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(String vaccine) {
+        this.vaccine = vaccine;
     }
 
     public String getDescription() {

@@ -8,7 +8,7 @@
       xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 <h:head>
-    <title>Categories</title>
+    <title>Test Cases</title>
     <link rel="stylesheet" href="/resources/style.css"/>
 </h:head>
 <h:body>
@@ -25,10 +25,13 @@
                         <tbody>
                         <tr>
                             <td style="padding-left:50px;" width="800px">
-                                <h3 style="margin-top:0px; text-transform: uppercase;color:#2196f3;">#{category.creationDate}</h3>
-                                <h:outputText value="#{category.tokenName}"/><br/><br/>
+                                <h3 style="margin-top:0px; text-transform: uppercase;color:#2196f3;">#{category.name}</h3><br/>
+                                <h:outputText value="#{category.description}"/><br/><br/>
                             </td>
                             <td style="padding-left:200px;" width="400px">
+                                <h:outputText style="margin-right:30px; color: #689f38; text-transform: uppercase; font-weight: bold;" value="#{category.vaccine}" />
+                                <h:outputText style="margin-right:30px; color: red; text-transform: uppercase; font-weight: bold;" value="#{category.rh}" /><br/><br/>
+                                <h:outputText style="margin-right:30px; color: #2196f3; text-transform: uppercase; font-weight: bold;" value="#{category.creationDate}" />
                                 <p:commandButton icon="pi pi-pencil" update=":form:manage-category-content"
                                                  rendered="#{!currentUser.hasRole('Usuario')}" oncomplete="PF('manageCategoryDialog').show()"
                                                  styleClass="edit-button rounded-button ui-button-success" process="@this">
@@ -46,7 +49,7 @@
                     </table>
                 </p:card>
             </p:dataScroller>
-            <p:dialog header="Category Details" showEffect="fade" modal="true"
+            <p:dialog header="Test Cases Details" showEffect="fade" modal="true"
                       widgetVar="manageCategoryDialog" responsive="true">
                 <p:outputPanel id="manage-category-content" class="ui-fluid">
                     <p:outputPanel rendered="#{not empty categoryBean.category}">
@@ -69,7 +72,7 @@
             </p:dialog>
         </div>
         <p:commandButton class="rounded-button ui-button-success a-button" style="width: 50px;height: 50px;" icon="pi pi-plus" actionListener="#{categoryBean.openNew}"
-                         rendered="#{!currentUser.hasRole('Usuario')}" update=":form:manage-category-content" oncomplete="PF('manageCategoryDialog').show()">
+                         update=":form:manage-category-content" oncomplete="PF('manageCategoryDialog').show()">
             <p:resetInput target=":form:manage-category-content"/>
             <f:setPropertyActionListener value="false" target="#{categoryBean.button}"/>
         </p:commandButton>
